@@ -1,0 +1,13 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    .search__header
+        h3 검색하신 단어는 #{searching}입니다.
+    .search__video
+        each item in videos
+            +videoBlock({
+                title:item.title,
+                views:item.views,
+                videoFile:item.videoFile
+            })
